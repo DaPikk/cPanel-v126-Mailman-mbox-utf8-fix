@@ -3,6 +3,7 @@
 ARCHIVE_BASES=(
     "/usr/local/cpanel/3rdparty/mailman/archives/private"
     "/usr/local/cpanel/3rdparty/mailman/archives/public"
+    "/usr/local/cpanel/3rdparty/mailman/lists"
 )
 
 PYTHON_FIXER="/usr/local/bin/fix_mbox_encoding.py"
