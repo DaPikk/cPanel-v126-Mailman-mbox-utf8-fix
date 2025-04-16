@@ -1,25 +1,34 @@
 # cPanel-v126-Mailman-mbox-utf8-fix
 This bundle includes scripts to scan and fix Mailman `.mbox` files in cPanel environments, particularly those using Mailman 2.x on cPanel v126+.
 
-## Included Scripts
+## ✅ Features
+
+- Scans all mailing lists under:
+  `/usr/local/cpanel/3rdparty/mailman/archives/private/`
+- Detects non-UTF-8 `.mbox` files inside each mailing list
+- Automatically re-encodes to UTF-8
+- Creates `.bak` backups before fixing
+- Outputs log to `/var/log/mailman_encoding_fix.log`
+
+## 📦 Included Scripts
 
 ### 1. scan_and_fix_mailman.sh
-Main script that loops through all users in `/home/`, checks for Mailman archives, and scans/fixes any `.mbox` files with non-UTF-8 encodings.
+Main script that finds all `.mbox` files under every mailing list archive and fixes encoding issues.
 
 ### 2. scan_mailman_archives.py
-Python script to detect the encoding of `.mbox` files using `chardet`.
+Detects file encoding using `chardet`.
 
 ### 3. fix_mbox_encoding.py
-Fixes `.mbox` files by detecting the correct encoding, converting to UTF-8, and replacing the original file (while backing it up).
+Fixes the `.mbox` file in place and creates a backup.
 
-## Setup Instructions
+## 🧰 Setup Instructions
 
 1. Extract the bundle:
    ```
-   tar -xzf mailman_encoding_fix_bundle.tar.gz
+   tar -xzf mailman_encoding_fix_bundle_updated.tar.gz
    ```
 
-2. Move scripts to a system path (e.g., /usr/local/bin):
+2. Move scripts to a system path:
    ```
    sudo mv *.sh *.py /usr/local/bin/
    ```
@@ -44,11 +53,14 @@ Fixes `.mbox` files by detecting the correct encoding, converting to UTF-8, and 
    @weekly /usr/local/bin/scan_and_fix_mailman.sh
    ```
 
-## Logs
+## 📝 Logs
 
-The script logs all actions to:
-```
-/var/log/mailman_encoding_fix.log
-```
+- All actions are logged to `/var/log/mailman_encoding_fix.log`
+- Ensure write permissions for that path
+
+## 🛡️ Safe to Use
+
+- Every `.mbox` file is backed up before modification
+- Only `.mbox` files that fail UTF-8 validation are re-encoded
 
 Make sure the user running the script has write permission there, or change the path in `scan_and_fix_mailman.sh`.
