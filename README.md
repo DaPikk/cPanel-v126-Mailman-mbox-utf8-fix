@@ -25,7 +25,7 @@ Fixes the `.mbox` file in place and creates a backup.
 
 1. Extract the bundle:
    ```
-   tar -xzf mailman_encoding_fix_bundle_updated.tar.gz
+   tar -xzf cPanel-v126-Mailman-mbox-utf8-fix-main.zip
    ```
 
 2. Move scripts to a system path:
