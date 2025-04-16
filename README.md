@@ -15,7 +15,7 @@ This bundle includes scripts to scan and fix Mailman `.mbox` files in cPanel env
 ## 📦 Included Scripts
 
 ### 1. scan_and_fix_mailman.sh
-Main script that finds all `.mbox` files under every mailing list archive and fixes encoding issues.
+Main script that finds all `.mbox` files under every mailing list archive and digest mbox and fixes encoding issues.
 
 ### 2. scan_mailman_archives.py
 Detects file encoding using `chardet`.
