@@ -4,7 +4,7 @@ This bundle includes scripts to scan and fix Mailman `.mbox` files in cPanel env
 ## ✅ Features
 
 - Scans all mailing lists under:
-  `/usr/local/cpanel/3rdparty/mailman/archives/private/`
+  `/usr/local/cpanel/3rdparty/mailman/archives/{private|public}/`
 - Detects non-UTF-8 `.mbox` files inside each mailing list
 - Automatically re-encodes to UTF-8
 - Creates `.bak` backups before fixing
