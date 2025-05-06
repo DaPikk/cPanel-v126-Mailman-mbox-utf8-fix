@@ -1,3 +1,8 @@
+## DEPRECATED NOTICE
+cPanel has fixed those errors (that were open for months) in cPanel version `126.0.16` - It is recommended to use newer version of cPanel than `126.0.16`
+This howto is just for historic purposes now!
+
+
 # cPanel-v126-Mailman-mbox-utf8-fix
 This bundle includes scripts to scan and fix Mailman `.mbox` files in cPanel environments, particularly those using Mailman 2.x on cPanel v126+.
 
